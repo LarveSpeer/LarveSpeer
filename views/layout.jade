@@ -11,6 +11,9 @@ html
 		meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui')
 		
+		// slides css
+		link(href="./stylesheets/slides.css", rel="stylesheet")
+		
 		link(rel='stylesheet', href='css/reveal.css')
 		link#theme(rel='stylesheet', href='css/theme/black.css')
 		
@@ -32,9 +35,8 @@ html
 			.slides
 				- stripes.forEach(function(stripe){
 					section
-						- stripe.forEach(function(id){
-							section
-								h1 !{id}
+						- stripe.forEach(function(slide){
+							section(id=slide.uuid) !{slide.html}
 						- })
 				- })
 		

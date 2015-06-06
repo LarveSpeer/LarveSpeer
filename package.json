@@ -9,6 +9,9 @@
 		"express-less": "x",
 		"less": "x",
 		"path": "x",
-		"LarveSpeer-markdown": "git+ssh://git@github.com:LarveSpeer/LarveSpeer-markdown.git"
+		"uuid": "x",
+		"async": "x",
+		"LarveSpeer-markdown": "git+ssh://git@github.com:LarveSpeer/LarveSpeer-markdown.git",
+		"LarveSpeer-jade": "git+ssh://git@github.com:LarveSpeer/LarveSpeer-jade.git"
 	}
 }
