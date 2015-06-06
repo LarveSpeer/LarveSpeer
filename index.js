@@ -22,7 +22,6 @@ app.get("/stylesheets/slides.css", function(req, res){
 
 
 app.get("/", function(req, res){
-	res.locals.stripes = app.locals.stripes
 	res.render("layout", res.locals)
 })
 
