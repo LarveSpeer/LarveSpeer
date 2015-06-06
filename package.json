@@ -5,6 +5,10 @@
 	"private": true,
 	"dependencies": {
 		"express": "x",
+		"jade": "x",
+		"express-less": "x",
+		"less": "x",
+		"path": "x",
 		"LarveSpeer-markdown": "git+ssh://git@github.com:LarveSpeer/LarveSpeer-markdown.git"
 	}
 }
