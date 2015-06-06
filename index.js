@@ -15,8 +15,6 @@ app.use(express.static('assets'));
 
 app.get("/stylesheets/slides.css", function(req, res){
 	less.render( app.locals.less, function( e, r ){
-		console.log(r.css)
-
 		res.type("text/css")
 		res.send(r.css)
 	})
