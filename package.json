@@ -1,0 +1,10 @@
+{
+	"name": "LarveSpeer",
+	"version": "0.0.0",
+	"description": "",
+	"private": true,
+	"dependencies": {
+		"express": "x",
+		"LarveSpeer-markdown": "git+ssh://git@github.com:LarveSpeer/LarveSpeer-markdown.git"
+	}
+}
