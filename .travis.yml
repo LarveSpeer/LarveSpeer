@@ -1,8 +1,2 @@
-before_script:
- - wget http://flowtype.org/downloads/flow-linux64-latest.zip
- - unzip flow-linux64-latest.zip
- - export PATH=$PATH:$PWD/flow/
- - rm -r flow/examples
-
 language: node_js
 node_js: "0.12"
