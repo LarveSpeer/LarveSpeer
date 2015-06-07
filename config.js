@@ -30,6 +30,16 @@ module.exports = {
 
 
 	/**
+		Meta informations
+	*/
+	meta: {
+		title: "Test",
+		description: "Test Presentation",
+		author: "Example"
+	},
+
+
+	/**
 		Revaljs init object (object will be passed through the client)
 			Full list of configuration options available at:
 			https://github.com/hakimel/reveal.js#configuration

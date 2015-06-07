@@ -8,6 +8,7 @@ var less = require("less")
 
 var app = express()
 app.locals.revealjs = config.revealjs
+app.locals.meta = config.meta
 
 app.set('view engine', 'jade');
 
