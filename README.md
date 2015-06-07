@@ -1,3 +1,5 @@
+![](https://travis-ci.org/LarveSpeer/LarveSpeer.svg?branch=master)
+
 # LarveSpeer
 
 ## First Steps
