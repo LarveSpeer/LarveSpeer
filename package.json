@@ -15,7 +15,7 @@
 		"LarveSpeer-jade": "git+ssh://git@github.com:LarveSpeer/LarveSpeer-jade.git"
 	},
 	"scripts": {
-		"test": "npm run test-install && npm run test-flow",
+		"test": "npm run test-install",
 		"test-install": "npm install",
 		"test-flow": "flow check"
 	}
