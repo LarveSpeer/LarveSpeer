@@ -21,6 +21,8 @@ module.exports = {
 			"page2",
 		],
 		[
+			"page3",
+			"page3",
 			"page3"
 		]
 
