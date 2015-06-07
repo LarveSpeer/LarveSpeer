@@ -7,6 +7,7 @@ var async = require('async')
 var less = require("less")
 
 var app = express()
+app.locals.revealjs = config.revealjs
 
 app.set('view engine', 'jade');
 
