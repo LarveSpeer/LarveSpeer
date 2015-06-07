@@ -24,4 +24,11 @@ In the presentation folder exists a folder for each slide. In the slide folder i
 
 ## API
 
-TODO
+### express
+Every plugin should return an (modified) express instance which will be available under `/slide/<uuid>`.
+
+### html()
+Returns the rendered HTML
+
+### less()
+Returns LESS which only affects the instances HTML.
