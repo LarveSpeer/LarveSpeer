@@ -1,6 +1,4 @@
-# LarveSpeer
-![](https://travis-ci.org/LarveSpeer/LarveSpeer.svg?branch=master)
-[![Code Climate](https://codeclimate.com/github/LarveSpeer/LarveSpeer/badges/gpa.svg)](https://codeclimate.com/github/LarveSpeer/LarveSpeer)
+# LarveSpeer ![](https://travis-ci.org/LarveSpeer/LarveSpeer.svg?branch=master) [![Code Climate](https://codeclimate.com/github/LarveSpeer/LarveSpeer/badges/gpa.svg)](https://codeclimate.com/github/LarveSpeer/LarveSpeer)
 
 
 ## First Steps
