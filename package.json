@@ -11,8 +11,8 @@
 		"path": "x",
 		"uuid": "x",
 		"async": "x",
-		"LarveSpeer-markdown": "git+ssh://git@github.com:LarveSpeer/LarveSpeer-markdown.git",
-		"LarveSpeer-jade": "git+ssh://git@github.com:LarveSpeer/LarveSpeer-jade.git"
+		"LarveSpeer-markdown": "git+https://github.com/LarveSpeer/LarveSpeer-markdown.git",
+		"LarveSpeer-jade": "git+https://github.com/LarveSpeer/LarveSpeer-jade.git"
 	},
 	"scripts": {
 		"test": "npm run test-install",
