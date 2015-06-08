@@ -4,8 +4,8 @@ var config = {
 	/**
 		path to the presentation folder
 	*/
-	presentationPath: "presentation1/",
-	//presentationPath: "presentation_NodeJS/",
+	//presentationPath: "presentation1/",
+	presentationPath: "presentation_NodeJS/",
 
 
 	/**
