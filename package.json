@@ -1,23 +1,24 @@
 {
-	"name": "LarveSpeer",
-	"version": "0.0.0",
-	"description": "",
-	"private": true,
-	"dependencies": {
-		"express": "x",
-		"jade": "x",
-		"express-less": "x",
-		"less": "x",
-		"path": "x",
-		"uuid": "x",
-		"async": "x",
-		"LarveSpeer-markdown": "git+https://github.com/LarveSpeer/LarveSpeer-markdown.git",
-		"LarveSpeer-jade": "git+https://github.com/LarveSpeer/LarveSpeer-jade.git"
-	},
-	"scripts": {
-		"test": "npm run test-install",
-		"test-install": "npm install",
-		"test-flow": "flow check"
-	},
-	"main": "index.js"
+  "name": "LarveSpeer",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "LarveSpeer-jade": "git+https://github.com/LarveSpeer/LarveSpeer-jade.git",
+    "LarveSpeer-markdown": "git+https://github.com/LarveSpeer/LarveSpeer-markdown.git",
+    "async": "x",
+    "express": "x",
+    "express-less": "x",
+    "jade": "x",
+    "less": "x",
+    "path": "x",
+    "socket.io": "^1.3.5",
+    "uuid": "x"
+  },
+  "scripts": {
+    "test": "npm run test-install",
+    "test-install": "npm install",
+    "test-flow": "flow check"
+  },
+  "main": "index.js"
 }

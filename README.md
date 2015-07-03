@@ -1,6 +1,17 @@
 # LarveSpeer ![](https://travis-ci.org/LarveSpeer/LarveSpeer.svg?branch=master) [![Code Climate](https://codeclimate.com/github/LarveSpeer/LarveSpeer/badges/gpa.svg)](https://codeclimate.com/github/LarveSpeer/LarveSpeer)
 
 
+
+TODO:
+
+Math plugin
+http://www.mathjax.org
+
+Hightlightjs plugin
+https://highlightjs.org/download/
+
+
+
 ## First Steps
 
 ### Clone & Install
@@ -19,6 +30,16 @@ The main configuration is done in the `config.js` file. There you define a path 
 
 In the presentation folder exists a folder for each slide. In the slide folder is a `config.js` file, where you define the plugin npm name and additional plugin configuration.
 
+
+## Using
+
+### Moderator
+The **Moderator monitor** contains the moderator notes and is available under
+`/moderator`.
+
+### Remote Presenation Control
+You can navigate remotely to all connected clients using the **presentationKey**. It can be configured under `config.presentation`.
+All clients, who send this key as a **GET** Parameter (`/?pk=myPresentationKey` or `/moderator?pk=myPresentationKey`) are authenticated.
 
 
 

@@ -1,0 +1,19 @@
+extends layout.jade
+
+block revealPresentation
+	div(class="reveal revealPresentation")
+		.slides
+			- stripes.forEach(function(stripe){
+				section
+					- stripe.forEach(function(slide){
+						section(id=slide.uuid) 
+							| !{slide.html}
+							- if (slide.htmlModerator){
+								hr
+								div(class="moderatorBlockquore" style="font-size:0.8em") !{slide.htmlModerator}
+							- }
+					- })
+			- })
+	script.
+		var revealPresentation = Reveal.initialize(!{JSON.stringify(config.revealjsMod)})
+	script(src="plugin/remoteControl/remoteControl.js")

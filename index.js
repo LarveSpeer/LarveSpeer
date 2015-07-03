@@ -7,24 +7,28 @@ var async = require('async')
 var less = require("less")
 
 var app = express()
-app.locals.revealjs = config.revealjs
-app.locals.meta = config.meta
+app.locals.config = config
 
 app.set('view engine', 'jade');
 
-app.use(express.static('assets'));
 
-
-app.get("/stylesheets/slides.css", function(req, res){
-	less.render( app.locals.less, function( e, r ){
+app.get("/css/slides.css", function(req, res){
+	less.render( app.locals.less, {
+		compress: true
+	}, function( e, r ){
 		res.type("text/css")
 		res.send(r.css)
 	})
 })
 
+app.use(express.static('assets'));
 
 app.get("/", function(req, res){
-	res.render("layout", res.locals)
+	res.render("index", res.locals)
+})
+
+app.get("/moderator", function(req, res){
+	res.render("moderator", res.locals)
 })
 
 
@@ -32,14 +36,14 @@ app.get("/", function(req, res){
 
 async.parallel(
 	{
-		users: function(callback) {
+		slides: function(callback) {
 			app.locals.stripes = []
 			app.locals.less = ""
-			config.slides.forEach(function(stripe){
+			config.presentation.slides.forEach(function(stripe){
 				var plugins = []
 				app.locals.stripes.push(plugins)
 				stripe.forEach(function(title){
-					var slidePath = path.resolve(__dirname, config.presentationPath, title)
+					var slidePath = path.resolve(__dirname, config.presentation.path, title)
 					var slideConfig = require(path.resolve(slidePath, "config.js"))
 					var slide = require(slideConfig.npmName)(slidePath)
 
@@ -49,6 +53,7 @@ async.parallel(
 
 					plugins.push({
 						html: slide.html(),
+						htmlModerator: slide.htmlModerator(),
 						uuid: slide.locals.uuid
 					})
 				})
@@ -61,9 +66,21 @@ async.parallel(
 			console.log("err: " + err)
 		}
 
-		//app.locals.user = results.users.items[0]
 
 		var server = http.createServer(app)
+		var io = require('socket.io')(server);
+
+		io.on('connection', function(socket){
+			socket.on('didMove', function(data){
+				if (data.presentationKey == config.presentation.key){
+					socket.broadcast.emit('didMove', data.indices)
+				}
+			})
+		})
+
+
+
+
 		server.listen(config.network.port, config.network.address)
 		server.on('listening', function() {
 			console.log('Express server started on at %s:%s', server.address().address, server.address().port)

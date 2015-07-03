@@ -33,6 +33,12 @@
 		// Configuration defaults, can be overridden at initialization time
 		config = {
 
+			// Class to identify the slides container
+			revealClass: ".reveal",
+
+			// Disable any user interaction and keybindings
+			userInteraction: true,
+
 			// The "normal" size of the presentation, aspect ratio will be preserved
 			// when the presentation is scaled to fit different resolutions
 			width: 960,
@@ -235,6 +241,10 @@
 
 		checkCapabilities();
 
+		// Copy options over to our config object
+		extend( config, options );
+		extend( config, query );
+
 		if( !features.transforms2d && !features.transforms3d ) {
 			document.body.setAttribute( 'class', 'no-transforms' );
 
@@ -259,8 +269,8 @@
 		}
 
 		// Cache references to key DOM elements
-		dom.wrapper = document.querySelector( '.reveal' );
-		dom.slides = document.querySelector( '.reveal .slides' );
+		dom.wrapper = document.querySelector( config.revealClass );
+		dom.slides = document.querySelector( config.revealClass+ ' .slides' );
 
 		// Force a layout when the whole page, incl fonts, has loaded
 		window.addEventListener( 'load', layout, false );
@@ -270,10 +280,6 @@
 		// Do not accept new dependencies via query config to avoid
 		// the potential of malicious script injection
 		if( typeof query['dependencies'] !== 'undefined' ) delete query['dependencies'];
-
-		// Copy options over to our config object
-		extend( config, options );
-		extend( config, query );
 
 		// Hide the address bar in mobile browsers
 		hideAddressBar();
@@ -469,7 +475,7 @@
 		createSingletonNode( dom.wrapper, 'div', 'pause-overlay', null );
 
 		// Cache references to elements
-		dom.controls = document.querySelector( '.reveal .controls' );
+		dom.controls = document.querySelector( config.revealClass+' .controls' );
 		dom.theme = document.querySelector( '#theme' );
 
 		dom.wrapper.setAttribute( 'role', 'application' );
@@ -529,7 +535,7 @@
 		injectStyleSheet( '@page{size:'+ pageWidth +'px '+ pageHeight +'px; margin: 0;}' );
 
 		// Limit the size of certain elements to the dimensions of the slide
-		injectStyleSheet( '.reveal section>img, .reveal section>video, .reveal section>iframe{max-width: '+ slideWidth +'px; max-height:'+ slideHeight +'px}' );
+		injectStyleSheet( config.revealClass+' section>img, '+config.revealClass+' section>video, '+config.revealClass+' section>iframe{max-width: '+ slideWidth +'px; max-height:'+ slideHeight +'px}' );
 
 		document.body.classList.add( 'print-pdf' );
 		document.body.style.width = pageWidth + 'px';
@@ -3715,6 +3721,7 @@
 	 * input.
 	 */
 	function onUserInput( event ) {
+		if (config.userInteraction == false) return
 
 		if( config.autoSlideStoppable ) {
 			pauseAutoSlide();
@@ -3726,6 +3733,7 @@
 	 * Handler for the document level 'keypress' event.
 	 */
 	function onDocumentKeyPress( event ) {
+		if (config.userInteraction == false) return
 
 		// Check if the pressed key is question mark
 		if( event.shiftKey && event.charCode === 63 ) {
@@ -3743,6 +3751,7 @@
 	 * Handler for the document level 'keydown' event.
 	 */
 	function onDocumentKeyDown( event ) {
+		if (config.userInteraction == false) return
 
 		// If there's a condition specified and it returns false,
 		// ignore this event
@@ -3865,6 +3874,7 @@
 	 * swipe and pinch gestures.
 	 */
 	function onTouchStart( event ) {
+		if (config.userInteraction == false) return
 
 		touch.startX = event.touches[0].clientX;
 		touch.startY = event.touches[0].clientY;
@@ -3888,6 +3898,7 @@
 	 * Handler for the 'touchmove' event.
 	 */
 	function onTouchMove( event ) {
+		if (config.userInteraction == false) return
 
 		// Each touch should only trigger one action
 		if( !touch.captured ) {
@@ -3975,6 +3986,7 @@
 	 * Handler for the 'touchend' event.
 	 */
 	function onTouchEnd( event ) {
+		if (config.userInteraction == false) return
 
 		touch.captured = false;
 
@@ -3984,6 +3996,7 @@
 	 * Convert pointer down to touch start.
 	 */
 	function onPointerDown( event ) {
+		if (config.userInteraction == false) return
 
 		if( event.pointerType === event.MSPOINTER_TYPE_TOUCH || event.pointerType === "touch" ) {
 			event.touches = [{ clientX: event.clientX, clientY: event.clientY }];
@@ -3996,6 +4009,7 @@
 	 * Convert pointer move to touch move.
 	 */
 	function onPointerMove( event ) {
+		if (config.userInteraction == false) return
 
 		if( event.pointerType === event.MSPOINTER_TYPE_TOUCH || event.pointerType === "touch" )  {
 			event.touches = [{ clientX: event.clientX, clientY: event.clientY }];
@@ -4008,6 +4022,7 @@
 	 * Convert pointer up to touch end.
 	 */
 	function onPointerUp( event ) {
+		if (config.userInteraction == false) return
 
 		if( event.pointerType === event.MSPOINTER_TYPE_TOUCH || event.pointerType === "touch" )  {
 			event.touches = [{ clientX: event.clientX, clientY: event.clientY }];
@@ -4021,6 +4036,7 @@
 	 * multiple slides.
 	 */
 	function onDocumentMouseScroll( event ) {
+		if (config.userInteraction == false) return
 
 		if( Date.now() - lastMouseWheelStep > 600 ) {
 
@@ -4045,6 +4061,7 @@
 	 * ( clickX / presentationWidth ) * numberOfSlides
 	 */
 	function onProgressClicked( event ) {
+		if (config.userInteraction == false) return
 
 		onUserInput( event );
 
@@ -4488,12 +4505,12 @@
 		// Forward event binding to the reveal DOM element
 		addEventListener: function( type, listener, useCapture ) {
 			if( 'addEventListener' in window ) {
-				( dom.wrapper || document.querySelector( '.reveal' ) ).addEventListener( type, listener, useCapture );
+				( dom.wrapper || document.querySelector( config.revealClass ) ).addEventListener( type, listener, useCapture );
 			}
 		},
 		removeEventListener: function( type, listener, useCapture ) {
 			if( 'addEventListener' in window ) {
-				( dom.wrapper || document.querySelector( '.reveal' ) ).removeEventListener( type, listener, useCapture );
+				( dom.wrapper || document.querySelector( config.revealClass ) ).removeEventListener( type, listener, useCapture );
 			}
 		},
 

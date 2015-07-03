@@ -3,46 +3,27 @@ html
 	head
 		meta(charset='utf-8')
 		
-		title #{meta.title}
+		title #{config.presentation.meta.title}
 		
-		meta(name='description', content=meta.description)
-		meta(name='author', content=meta.author)
+		meta(name='description', content=config.presentation.meta.description)
+		meta(name='author', content=config.presentation.meta.author)
+		
+		// Viewports
 		meta(name='apple-mobile-web-app-capable', content='yes')
 		meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui')
 		
-		// slides css
-		link(href="./stylesheets/slides.css", rel="stylesheet")
 		
+		// CSS
 		link(rel='stylesheet', href='css/reveal.css')
-		link#theme(rel='stylesheet', href='css/theme/black.css')
+		link(rel='stylesheet', href='/css/slides.css')
+		// Theme (TODO: move to config)
+		link#theme(rel='stylesheet', href='css/theme/sky.css')
 		
-		// Code syntax highlighting
-		link(rel='stylesheet', href='css/zenburn.css')
-		
-		// Printing and PDF exports
-		script.
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-			//if lt IE 9
-			script(src='js/html5shiv.js')
-	body
-		.reveal
-			// Any section element inside of this container is displayed as a slide
-			.slides
-				- stripes.forEach(function(stripe){
-					section
-						- stripe.forEach(function(slide){
-							section(id=slide.uuid) !{slide.html}
-						- })
-				- })
-		
-		- //script(src='js/head.min.js')
+		// JS
+		script(src="js/helper.js")
+		script(src="js/socket.io.js")
 		script(src='js/reveal.js')
-		script.
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize(!{JSON.stringify(revealjs)})
+		
+	body
+		block revealPresentation

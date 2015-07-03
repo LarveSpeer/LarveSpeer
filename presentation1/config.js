@@ -29,7 +29,15 @@ module.exports = {
 		title: "Test",
 		description: "Test Presentation",
 		author: "Example"
-	}
+	},
+
+
+
+	/**
+		Key used to identify the presenter
+	*/
+	presentationKey: "test",
+
 
 
 }
