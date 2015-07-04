@@ -1,15 +1,19 @@
 # LarveSpeer ![](https://travis-ci.org/LarveSpeer/LarveSpeer.svg?branch=master) [![Code Climate](https://codeclimate.com/github/LarveSpeer/LarveSpeer/badges/gpa.svg)](https://codeclimate.com/github/LarveSpeer/LarveSpeer)
 
 
+## TODO
 
-TODO:
-
-Math plugin
-http://www.mathjax.org
-
-Hightlightjs plugin
-https://highlightjs.org/download/
-
+- Math plugin
+    - http://www.mathjax.org
+- Backend GUI (/moderator) improvements
+    - next slide
+- Make LarveSpeer a module, which can be used in an presentation module
+    - config
+    - Presentaion folder
+    - myPresentation.js
+        - LarveSpeer
+            - Plugins
+            - ...
 
 
 ## First Steps
