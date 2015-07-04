@@ -70,9 +70,13 @@ async.parallel(
 		var server = http.createServer(app)
 		var io = require('socket.io')(server);
 
+		var currentPage
 		io.on('connection', function(socket){
+			setTimeout(function() {socket.broadcast.emit('didMove', currentPage)},1250);
+
 			socket.on('didMove', function(data){
 				if (data.presentationKey == config.presentation.key){
+					currentPage = data.indices
 					socket.broadcast.emit('didMove', data.indices)
 				}
 			})

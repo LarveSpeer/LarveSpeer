@@ -13,8 +13,6 @@ var config = {
 		path: "presentation1/",
 
 
-		// key to authenticate the client
-		key : "osmrkgysnjyekkgzochwrkmfujz_ywnqkcnfbrojsoswryhyumaepxuqdphzmaxkbewieuguahvazdcearzotqsgvtzehadwemchpxpekkdtogvvpugxotwdwuzsnuuyuvuindjawgxqbbrhawzkniczwbvnumbqegqqvawtzmphxxmfqiszxzfucowtcer_jdmunvb_"
 	},
 
 

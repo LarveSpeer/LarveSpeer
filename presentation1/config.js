@@ -36,7 +36,7 @@ module.exports = {
 	/**
 		Key used to identify the presenter
 	*/
-	presentationKey: "test",
+	key: "test",
 
 
 
