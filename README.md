@@ -14,20 +14,18 @@
 
 ## TODO
 
-- More Plugins
-	- Math plugin
-		- http://www.mathjax.org
-	- Table Plugin (Scroll??)
-- Implement API for multiple clicks in one slide
-- Backend GUI (/moderator) improvements
-	- next slide
-- Make LarveSpeer a module, which can be used in an presentation module
-	- config
-	- Presentaion folder
-	- myPresentation.js
-		- LarveSpeer
-			- Plugins
-			- ...
+Topic | Description
+ ---- | ----
+Plugins | Math (http://www.mathjax.org)
+ | Media (Audio/ Video/ Image)
+ | ...
+ | 
+GUI | UserConfig (Clientside settings frontend for Theme and module configs)
+ |
+Module API | Slide Fragments API (next and prev function with callback)
+ | Doku
+ |
+General | Make LarveSpeer a module
 
 ## First Steps
 
