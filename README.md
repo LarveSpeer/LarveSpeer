@@ -28,10 +28,6 @@
 		- LarveSpeer
 			- Plugins
 			- ...
-- Tagging Concept
-	- Modules return html/ less for given Tag
-		- Modular design (multiple moderator monitors etc.)
-		- "default" Tag for default content
 
 ## First Steps
 
