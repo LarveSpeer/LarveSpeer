@@ -1,26 +1,37 @@
 # LarveSpeer ![](https://travis-ci.org/LarveSpeer/LarveSpeer.svg?branch=master) [![Code Climate](https://codeclimate.com/github/LarveSpeer/LarveSpeer/badges/gpa.svg)](https://codeclimate.com/github/LarveSpeer/LarveSpeer)
 
 
+## Goals
+- Framework to simplify creating presentations
+- Modular and hackable to the ground
+- Full texted based configuration
+- Simple solution to sync all clients (socket.io)
+- Per user configurations for the instance (theme, settings, etc.)
+- Full Feature API for Slide modules
+
+
+
+
 ## TODO
 
 - More Plugins
-    - Math plugin
-        - http://www.mathjax.org
-    - Table Plugin (Scroll??)
+	- Math plugin
+		- http://www.mathjax.org
+	- Table Plugin (Scroll??)
 - Implement API for multiple clicks in one slide
 - Backend GUI (/moderator) improvements
-    - next slide
+	- next slide
 - Make LarveSpeer a module, which can be used in an presentation module
-    - config
-    - Presentaion folder
-    - myPresentation.js
-        - LarveSpeer
-            - Plugins
-            - ...
+	- config
+	- Presentaion folder
+	- myPresentation.js
+		- LarveSpeer
+			- Plugins
+			- ...
 - Tagging Concept
-    - Modules return html/ less for given Tag
-        - Modular design (multiple moderator monitors etc.)
-        - "default" Tag for default content
+	- Modules return html/ less for given Tag
+		- Modular design (multiple moderator monitors etc.)
+		- "default" Tag for default content
 
 ## First Steps
 
@@ -41,6 +52,8 @@ The main configuration is done in the `config.js` file. There you define a path 
 In the presentation folder exists a folder for each slide. In the slide folder is a `config.js` file, where you define the plugin npm name and additional plugin configuration.
 
 
+
+
 ## Using
 
 ### Moderator
@@ -50,6 +63,7 @@ The **Moderator monitor** contains the moderator notes and is available under
 ### Remote Presenation Control
 You can navigate remotely to all connected clients using the **presentationKey**. It can be configured under `config.presentation`.
 All clients, who send this key as a **GET** Parameter (`/?pk=myPresentationKey` or `/moderator?pk=myPresentationKey`) are authenticated.
+
 
 
 
