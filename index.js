@@ -1,6 +1,5 @@
 var http = require("http")
 var express = require("express")
-var config = require('./config.js')
 var path = require("path")
 var uuid = require("uuid")
 var async = require('async')
@@ -12,7 +11,6 @@ module.exports = function(config){
 
 	app.set('view engine', 'jade');
 
-
 	app.get("/css/slides.css", function(req, res){
 		less.render( app.locals.less, {
 			compress: true
@@ -22,10 +20,11 @@ module.exports = function(config){
 		})
 	})
 
-	app.use(express.static('assets'));
+
+	app.use(express.static(__dirname+'/assets'));
 
 	app.get("/", function(req, res){
-		res.render("index", res.locals)
+		res.render(__dirname + "/views/index.jade", res.locals)
 	})
 
 	// app.get("/moderator", function(req, res){

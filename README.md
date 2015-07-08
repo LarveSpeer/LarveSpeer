@@ -24,8 +24,6 @@ GUI | UserConfig (Clientside settings frontend for Theme and module configs)
  |
 Module API | Slide Fragments API (next and prev function with callback)
  | Doku
- |
-General | Make LarveSpeer a module
 
 ## First Steps
 
