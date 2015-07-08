@@ -3,8 +3,11 @@
 
 ## TODO
 
-- Math plugin
-    - http://www.mathjax.org
+- More Plugins
+    - Math plugin
+        - http://www.mathjax.org
+    - Table Plugin (Scroll??)
+- Implement API for multiple clicks in one slide
 - Backend GUI (/moderator) improvements
     - next slide
 - Make LarveSpeer a module, which can be used in an presentation module
@@ -14,7 +17,10 @@
         - LarveSpeer
             - Plugins
             - ...
-
+- Tagging Concept
+    - Modules return html/ less for given Tag
+        - Modular design (multiple moderator monitors etc.)
+        - "default" Tag for default content
 
 ## First Steps
 

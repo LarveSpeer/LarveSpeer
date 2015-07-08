@@ -6,7 +6,7 @@ block revealPresentation
 			- stripes.forEach(function(stripe){
 				section
 					- stripe.forEach(function(slide){
-						section(id=slide.uuid) !{slide.html}
+						section(id=slide.locals.uuid) !{slide.html({tags: ["main", "tag1", "tag2"]})}
 					- })
 			- })
 	script.

@@ -9,8 +9,7 @@ var config = {
 		/**
 			path to the presentation folder
 		*/
-		//presentationPath: "presentation1/",
-		path: "presentation1/",
+		path: "demo_presentation/",
 
 
 	},
@@ -21,24 +20,24 @@ var config = {
 			Full list of configuration options available at:
 			https://github.com/hakimel/reveal.js#configuration
 	*/
-	revealjsMod: {
-		controls: true,
-		progress: true,
-		history: true,
-		center: true,
+	// revealjsMod: {
+	// 	controls: true,
+	// 	progress: true,
+	// 	history: true,
+	// 	center: true,
+	//
+	// 	revealClass: ".revealPresentation",
+	//
+	// 	//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+	// 	//parallaxBackgroundSize: "2100px 900px",
+	//
+	// 	transition: 'slide', // none/fade/slide/convex/concave/zoom
+	//
+	// 	// Optional reveal.js plugins
+	// 	dependencies: []
+	// },
 
-		revealClass: ".revealPresentation",
-
-		//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-		//parallaxBackgroundSize: "2100px 900px",
-
-		transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-		// Optional reveal.js plugins
-		dependencies: []
-	},
-
-	revealjs: {
+	revealjsMod: { // revealjs
 		controls: false,
 		progress: true,
 		history: true,

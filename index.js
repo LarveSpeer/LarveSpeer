@@ -27,9 +27,10 @@ app.get("/", function(req, res){
 	res.render("index", res.locals)
 })
 
-app.get("/moderator", function(req, res){
-	res.render("moderator", res.locals)
-})
+// app.get("/moderator", function(req, res){
+// 	res.render("moderator", res.locals)
+// })
+
 
 
 
@@ -45,17 +46,12 @@ async.parallel(
 				stripe.forEach(function(title){
 					var slidePath = path.resolve(__dirname, config.presentation.path, title)
 					var slideConfig = require(path.resolve(slidePath, "config.js"))
-					var slide = require(slideConfig.npmName)(slidePath)
 
+					var slide = require(slideConfig.npmName)(slidePath)
 					slide.locals.uuid = "p" + uuid.v4().replace(/[^a-zA-Z0-9]/g, '')
 					app.locals.less += " #" + slide.locals.uuid + " { " + slide.less() + " } "
 					app.use("/slide/" + slide.locals.uuid, slide)
-
-					plugins.push({
-						html: slide.html(),
-						htmlModerator: slide.htmlModerator(),
-						uuid: slide.locals.uuid
-					})
+					plugins.push(slide)
 				})
 			})
 			callback(null, null)
