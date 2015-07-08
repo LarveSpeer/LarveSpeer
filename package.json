@@ -4,10 +4,6 @@
 	"description": "",
 	"private": true,
 	"dependencies": {
-		"LarveSpeer-jade": "git+https://github.com/LarveSpeer/LarveSpeer-jade.git",
-		"LarveSpeer-markdown": "git+https://github.com/LarveSpeer/LarveSpeer-markdown.git",
-		"LarveSpeer-table": "git+https://github.com/LarveSpeer/LarveSpeer-table.git",
-		"LarveSpeer-tags": "git+https://github.com/LarveSpeer/LarveSpeer-tags.git",
 		"async": "x",
 		"express": "x",
 		"express-less": "x",
