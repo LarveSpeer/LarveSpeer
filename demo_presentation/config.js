@@ -11,17 +11,17 @@ module.exports = {
 		*/
 		[
 			// relativ path to pageFolder
-			"page1",
-			"page2",
-			"page5",
+			"page1-markdown",
+			"page2-markdown",
+			"page5-tags",
 		],
 		[
-			"page3",
-			"page3"
+			"page3-jade",
+			"page3-jade"
 		],
 		[
-			"page4",
-			"page4"
+			"page4-table",
+			"page4-table"
 		]
 
 	],

@@ -11,11 +11,14 @@ module.exports = {
 		Slide config
 	*/
 	tags: {
-		tag1: "../page1",
-		tag2: "../page3",
-		tag3: "../page4"
+		tag1: "../page1-markdown",
+		tag2: "../page3-jade",
+		tag3: "../page4-table"
 	},
 
+	/**
+		Path to own template (optional)
+	*/
 	template: "template.jade"
 
 }
