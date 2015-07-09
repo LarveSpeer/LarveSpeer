@@ -54,19 +54,19 @@ Every module should return an (modified) express instance which will be availabl
 
 
 ### Server
-Method 				| Type			| Description
- ----  				| ---- 			| ----
+Method 				| Type			| Description
+ ----  				| ---- 			| ----
 html(userConfig) 	| userConfig 	| userConfig object, for user module config (LarveSpeer-tags, etc.)
  					| return 		| HTML string
- 					| 				| |
+ 					| 				| |
 less(userConfig) 	| userConfig 	| userConfig object, for user module config (LarveSpeer-tags, etc.)
 					| return 		| LESS string (only affects the own HTML)
 
 
 
 ### Client (TODO)
-Method 				| Type			| Description
- ----  				| ---- 			| ----
+Method 				| Type			| Description
+ ----  				| ---- 			| ----
 | |
 
 
@@ -77,8 +77,8 @@ Method 				| Type			| Description
 
 LarveSpeer is distributed under the GNU General Public License, see the LICENSE file for more details.
 
-Framework 	| Licence
- ---- 		| ----
+Framework 	| Licence
+ ---- 		| ----
 reveal.js 	| Copyright (C) 2015 Hakim El Hattab, http://hakim.se
 
 (all used frameworks are marked with there licence)
